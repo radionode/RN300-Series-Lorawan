@@ -1,4 +1,4 @@
-# RN300-Series-Lorawan
+# Radionode RN300-Series via LoraWan
 
 RN310 Temp/RH Model
 
