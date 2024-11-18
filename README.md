@@ -6,7 +6,7 @@
 <table>
     <tr>
         <th>Model Description</th>
-        <th>Wireless Telecommunications</th>
+        <th>Spec.</th>
     </tr>
     <tr>
         <td>
