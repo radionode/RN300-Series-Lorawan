@@ -6,14 +6,14 @@
 <table>
     <tr>
         <th>Model Description</th>
-        <th>Type</th>
+        <th>Wireless Telecommunications</th>
     </tr>
     <tr>
         <td>
-            <br>
-            •RN310 : Temp/RH Model <br>
-            •RN320-BTH : Temp/RH Model <br>
+            • RN310 : Temp/RH Model <br>
+            • RN320-BTH : Temp/RH Model <br>
         </td>
-        <td>Temperature</td>
+        <td>Long Range Wireless / LoraWAN ® </td>
     </tr>
 </table>
+
