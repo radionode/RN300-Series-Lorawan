@@ -3,7 +3,7 @@
 *
  * Copyright 2024 Radionode
 *
-* @product RN320_BTH Temp/RH
+* @product RN320_EX2 Temp/RH
 
 */
 function Decoder(bytes, port) {
@@ -87,11 +87,12 @@ function Decoder(bytes, port) {
 		break;
 		case 12 : // datain
 		case 13 : // holddata
-            // Timestamp format (0: Unix Epoch, 1: Radionode Timestamp)
+		case 14 : // event
+            // Timestamp format (0: Unix, 1: Radionode Timestamp)
 			protocol.TSMODE = readUInt8LE(bytes[2]); 
-            // Sample measurement time (timestamp)
+           // Sample measurement time (timestamp)
 			protocol.TIMESTAMP = readUInt32LE(bytes.slice(3, 7));
-           //RN320-BTH Sample format (e.g., float sensor data)
+           //RN320-EX2 Sample format (e.g., float sensor data)
 			protocol.SPLFMT = readUInt8LE(bytes[7]);
 			var raw_size = 8;
 			var ch_data = bytes.slice(8);
@@ -104,10 +105,16 @@ function Decoder(bytes, port) {
 				default : //error
 					return { payload: "Frame SPLFMT check failed." };
 			}			
+			var ch_data = bytes.slice(8);
+			var data_size = ch_data.length;
+			protocol.DATA_SIZE = data_size;
+
+			var ch_count = data_size/raw_size;
 			if( ch_count > 0 ){
 				var offset = 0;
-				for (var i = 0; i <= ch_count; i++ ) {
+				for (var i = 0; i < ch_count; i++ ) {
 					protocol["CH"+(i+1)] = readFloatLE(ch_data.slice(offset,offset+raw_size)).toFixed(2);
+					if( protocol["CH"+(i+1)] == "-9999.90" ) protocol["CH"+(i+1)] = null;
 					offset += raw_size;
 				}
 			}
