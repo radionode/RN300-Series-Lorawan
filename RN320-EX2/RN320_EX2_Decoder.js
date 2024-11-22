@@ -3,7 +3,7 @@
 *
  * Copyright 2024 Radionode
 *
-* @product RN320_EX2 Temp/RH
+* @product RN320_EX2 Temp/RH/Door
 
 */
 function Decoder(bytes, port) {
