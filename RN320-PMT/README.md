@@ -11,14 +11,14 @@
     <tr>
         <td>
             High Performance IAQ Sensor<br>
-            • CH1 : <br>
-	    • CH2 : <br>
-            • CH3 : <br>
-            • CH4 : <br>
-            • CH5 : <br>
-            • CH6 : <br>
-            • CH7 : <br>
-            • CH8: <br>
+            • CH1 : PM2.5(ug/m3)<br>
+			• CH2 : PM10(ug/m3)<br>
+            • CH3 : PM0.5(ug/m3) <br>
+            • CH4 : HCHO (ug/m3)  <br>
+            • CH5 : CO2 (ppm)<br>
+            • CH6 : CO (ppm)<br>
+            • CH7 : Temp (°C/°F)<br>
+            • CH8 : RH (%)<br>
         </td>
         <td></td>
     </tr>
