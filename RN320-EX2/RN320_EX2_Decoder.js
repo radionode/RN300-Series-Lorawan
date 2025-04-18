@@ -3,15 +3,18 @@
 *
  * Copyright 2024 Radionode
 *
-* @product RN320_EX2 Temp/RH/Door
-
+* @product RN320_EX2 Temp/Temp/Door
+* CH1 : Temp
+* CH2 : Temp
+* CH3 : Door
 */
+
 function Decoder(bytes, port) {
 	/* ******************************************
 	return payload
 	********************************************/
 	var message = {};
-	message.Radionode_DX_v2_TTN = {};
+	message.Radionode_DX_v2_TTN = {};// radionode protocol ver 2.5
 	message.Radionode_DX_v2_TTN.Uplink = {};
 
 	/* ******************************************
@@ -56,55 +59,36 @@ function Decoder(bytes, port) {
 	radionode payload protocols
 	********************************************/
 	var protocol = {}; //output of Radionode Dx Datain Protocol
+	protocol.MAC = "DEV_EUI";// MAC이 존재 한다면 여기에 추가 / DEV_EUI로 보내면 DEV_EUI를 MAC으로 사용체크
+	protocol.IP = -1;// IP 정보가 존재 한다면 여기에 추가 / -1로 보내면 0.0.0.0샛팅
+	protocol.HISTORY = [];// 수회 측정 단일 전송 기능 사용시 C000을 제외 한 P001~데이터 저장
 
-    // Device MAC address (optional: set for each device using DEV_EUI)
-	protocol.MAC = "DEV_EUI";
-    // Default IP address (0.0.0.0)
-	protocol.IP = -1;
-    // Stores measurement data for P001 and onwards
-	protocol.HISTORY = [];
-
-	// Protocol header, indicates start (0x0B)
 	protocol.HEAD = readUInt8LE(bytes[0]);
-    // Device model number index (BYTE: 0~255)
 	protocol.MODEL = readUInt8LE(bytes[1]);
 	switch (protocol.HEAD) {
 		case 11 : // checkin
-            //Firmware version 
 			protocol.VER = new Date((readUInt32LE(bytes.slice(2, 6)) * 1000)).toJSON().split('.')[0].replace('-', '').split('T')[0];
-            // Data transmission interval
 			protocol.INTERVAL = readUInt16LE(bytes.slice(6, 8));
-            // Sensor model number
-            protocol.SPLRATE = readUInt16LE(bytes.slice(6, 8));
-			// Indicates the battery status. (0 = DC, 5 = Replace battery)
-            protocol.BAT = readUInt8LE(bytes[8]);
-            // Battery status (in mV)
-			protocol.VOLT = readUInt16LE(bytes.slice(9, 11))/1000;
-            // Frequency band configuration (LoRaWAN region)
+			protocol.SPLRATE = readUInt16LE(bytes.slice(6, 8));
+			protocol.BAT = readUInt8LE(bytes[8]);
+			protocol.VOLT = "1|"+readUInt16LE(bytes.slice(9, 11))/1000;
 			protocol.FREQBAND = readUInt8LE(bytes[11]);
-            // Sub-band configuration
 			protocol.SUBBAND = readUInt8LE(bytes[12]);
 		break;
 		case 12 : // datain
 		case 13 : // holddata
 		case 14 : // event
-            // Timestamp format (0: Unix, 1: Radionode Timestamp)
-			protocol.TSMODE = readUInt8LE(bytes[2]); 
-           // Sample measurement time (timestamp)
+			protocol.TSMODE = readUInt8LE(bytes[2]);
 			protocol.TIMESTAMP = readUInt32LE(bytes.slice(3, 7));
-           //RN320-EX2 Sample format (e.g., float sensor data)
 			protocol.SPLFMT = readUInt8LE(bytes[7]);
-			var raw_size = 8;
-			var ch_data = bytes.slice(8);
-			var data_size = ch_data.length;
-			var ch_count = data_size/raw_size;
+			var raw_size = 4;
 			switch (protocol.SPLFMT) {
 				case 1: raw_size = 2; break;
 				case 2: raw_size = 4; break;
 				case 3: raw_size = 8; break;
 				default : //error
 					return { payload: "Frame SPLFMT check failed." };
-			}			
+			}
 			var ch_data = bytes.slice(8);
 			var data_size = ch_data.length;
 			protocol.DATA_SIZE = data_size;
@@ -131,3 +115,4 @@ function Decoder(bytes, port) {
 	********************************************/
 	return { payload: message };
 }
+
