@@ -4,7 +4,10 @@
  * Copyright 2024 Radionode
  *
  * @product RN310 Temp/RH
+ * CH1 : Temp
+ * CH2 : RH
  */
+
 // Chirpstack v4
 function decodeUplink(input) {
     var decoded = RN310_DeviceDecode(input.bytes);
