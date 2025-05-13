@@ -64,7 +64,7 @@ function Decoder(bytes, port) {
       const splfmt = readUInt8(bytes[7]);
 
       if (splfmt !== 1) {
-		  return { error: "Unsupported Sensor Data Format: " + splfmt };
+        return { error: "Unsupported Sensor Data Format: " + splfmt };
 	  }
 
       const raw_size = 2;
@@ -76,7 +76,7 @@ function Decoder(bytes, port) {
       let temperature = null, humidity = null;
 
       if (ch_count < 8) {
-		  return { error: "Unsupported Sensor Data Size: " + ch_count };
+        return { error: "Unsupported Sensor Data Size: " + ch_count };
 	  }
 
       pm25 = parseInt(readUInt16LE(data.slice(offset, offset + raw_size)), 10);
@@ -119,12 +119,12 @@ function Decoder(bytes, port) {
         data_size,
         pm25,
         pm10,
-		lux,
-		hcho,
-		co2,
-		co,
-		temperature,
-		humidity
+        lux,
+        hcho,
+        co2,
+        co,
+        temperature,
+        humidity
       };
 
     }
