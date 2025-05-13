@@ -65,7 +65,7 @@ function Decoder(bytes, port) {
 
       if (splfmt !== 1) {
         return { error: "Unsupported Sensor Data Format: " + splfmt };
-	  }
+      }
 
       const raw_size = 2;
       const data = bytes.slice(8);
@@ -77,7 +77,7 @@ function Decoder(bytes, port) {
 
       if (ch_count < 8) {
         return { error: "Unsupported Sensor Data Size: " + ch_count };
-	  }
+      }
 
       pm25 = parseInt(readUInt16LE(data.slice(offset, offset + raw_size)), 10);
       if (pm25 >= 65535) pm25 = null;

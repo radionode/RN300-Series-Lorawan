@@ -65,7 +65,7 @@ function Decoder(bytes, port) {
 
       if (splfmt !== 2) {
         return { error: "Unsupported Sensor Data Format: " + splfmt };
-	  }
+      }
 
       const raw_size = 4;
       const data = bytes.slice(8);
@@ -77,7 +77,7 @@ function Decoder(bytes, port) {
 
       if (ch_count < 3) {
         return { error: "Unsupported Sensor Data Size: " + ch_count };
-	  }
+      }
 
       temperature_01 = parseFloat(readFloatLE(data.slice(offset, offset + raw_size)).toFixed(2));
       if (temperature_01 <= -9999.0) temperature_01 = null;
