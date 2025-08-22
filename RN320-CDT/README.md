@@ -2,7 +2,7 @@
 <img src="https://github.com/user-attachments/assets/771264bf-60dc-46db-bd62-2f0d790b0e11" width="20%" height="10%">
 <body>
 
-<h3> RN320-PMT</h3>
+<h3> RN320-CDT</h3>
 <table>
     <tr>
         <th>Model Description</th>
@@ -11,14 +11,10 @@
     <tr>
         <td>
             High Performance IAQ Sensor<br>
-            • CH1 : PM2.5(ug/m3)<br>
-			• CH2 : PM10(ug/m3)<br>
-            • CH3 : LUX(lux) <br>
-            • CH4 : HCHO (ug/m3)  <br>
-            • CH5 : CO2 (ppm)<br>
-            • CH6 : CO (ppm)<br>
-            • CH7 : Temp (°C/°F)<br>
-            • CH8 : RH (%)<br>
+            • CH1 : CO2 (ppm)<br>
+            • CH2 : LUX (lux)<br>
+            • CH3 : Temp (°C/°F)<br>
+            • CH4 : RH (%)<br>
         </td>
         <td></td>
     </tr>
