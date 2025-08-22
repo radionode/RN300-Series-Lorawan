@@ -10,7 +10,7 @@
     </tr>
     <tr>
         <td>
-            High Performance IAQ Sensor<br>
+            High Performance CO2 Sensor<br>
             • CH1 : CO2 (ppm)<br>
             • CH2 : LUX (lux)<br>
             • CH3 : Temp (°C/°F)<br>
