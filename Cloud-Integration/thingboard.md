@@ -269,7 +269,7 @@ We can set up a dashboard by selecting the **Dashboard** option on the menu.
 
 Enter a name for the Dashboard and then click the **Add** button.
 
-![ThingsBoard Add Dashboard Dialog]images/TB_rn320bth/TB_Lora_14.png)
+![ThingsBoard Add Dashboard Dialog](images/TB_rn320bth/TB_Lora_14.png)
 
 After creating the Dashboard, we can set it up by adding the widget of our choice.
 
