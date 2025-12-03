@@ -180,5 +180,61 @@ Then press the **Next** button. You need to add a name for your integration and 
 
 ![ThingsBoard Uplink Data Converter Configuration](images/TB_rn320bth/TB_Lora_8.png)
 
+In the payload decoder for the message received from the network server, copy and paste the following JavaScript code:
 
+```javascript
+function safeParse(payload) {
+  try {
+    if (typeof payload === 'string') {
+      return JSON.parse(payload);
+    } else if (Array.isArray(payload)) {
+      // If payload is byte array (common in ThingsBoard tests)
+      var text = String.fromCharCode.apply(null, payload);
+      return JSON.parse(text);
+    } else if (typeof payload === 'object' && payload !== null) {
+      return payload;
+    }
+  } catch (e) {
+    return {};
+  }
+  return {};
+}
+
+var data = safeParse(payload);
+
+// Step 2: Extract decoded LoRaWAN data
+var deviceName = data?.end_device_ids?.device_id || "Unknown_Device";
+var applicationId = data?.end_device_ids?.application_ids?.application_id || "Unknown_App";
+var decoded = data?.uplink_message?.decoded_payload || {};
+var rx = (data?.uplink_message?.rx_metadata && data.uplink_message.rx_metadata[0]) || {};
+
+// Step 3: Build telemetry
+var telemetry = {};
+if (decoded.temperature !== undefined) telemetry.temperature = decoded.temperature;
+if (decoded.humidity !== undefined) telemetry.humidity = decoded.humidity;
+if (decoded.model !== undefined) telemetry.model = decoded.model;
+if (decoded.timestamp !== undefined) telemetry.timestamp = decoded.timestamp;
+if (rx.rssi !== undefined) telemetry.rssi = rx.rssi;
+if (rx.snr !== undefined) telemetry.snr = rx.snr;
+
+// Step 4: Build final payload for ThingsBoard
+var result = {
+  deviceName: deviceName,
+  deviceType: "RN320-BTH",
+  telemetry: {
+    ts: Date.parse(data?.uplink_message?.received_at || new Date().toISOString()),
+    values: telemetry
+  },
+  attributes: {
+    app_id: applicationId,
+    f_port: data?.uplink_message?.f_port,
+    frequency: data?.uplink_message?.settings?.frequency,
+    spreading_factor: data?.uplink_message?.settings?.data_rate?.lora?.spreading_factor,
+    gateway_id: rx?.gateway_ids?.gateway_id,
+    dev_eui: data?.end_device_ids?.dev_eui
+  }
+};
+
+return result;
+```
 
