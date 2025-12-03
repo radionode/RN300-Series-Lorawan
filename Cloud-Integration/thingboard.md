@@ -149,7 +149,7 @@ function Decoder (bytes, port) {
 
 Next step is an **End Device creation** in the TTS. Open the **Devices** page and click the **Register device** tab.
 
-![The Things Stack End Devices Page with Register Device Button](images/TB_rn320bth/TB_Lora_4.png)
+![The Things Stack End Devices Page with Register Device Button](images/TB_rn320bth/Tb_Lora_4.png)
 
 To register the End Device, enter the following details:
 
