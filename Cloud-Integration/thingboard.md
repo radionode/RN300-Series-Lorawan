@@ -238,3 +238,32 @@ var result = {
 return result;
 ```
 
+Then copy the **HTTP endpoint URL** and click **Add** to save the integration in the ThingsBoard cloud. We will use this endpoint in the webhook creation, so save it safely.
+
+![ThingsBoard HTTP Endpoint URL and Add Button](images/TB_rn320bth/TB_Lora_9.png)
+
+## Creating a Webhook in The Things Stack Platform
+
+To create a webhook in the TTS platform, click the **Webhook** tab and select the **Custom webhook** option, as shown in the figure below.
+
+![The Things Stack Webhook Templates with Custom Webhook Selected](images/TB_rn320bth/TB_Lora_10.png)
+
+Then in the **Webhook ID** field, add a name for your webhook. In the **Base URL** tab, paste the endpoint URL you copied from the ThingsBoard cloud platform.
+
+In the **Additional header** option, add `Content-Type: application/json` and save the webhook.
+
+![The Things Stack Webhook General Settings](images/TB_rn320bth/TB_Lora_11.png)
+
+Now the communication will start between the network server and the ThingsBoard cloud platform to send data from your LoRaWAN devices to the ThingsBoard cloud.
+
+## Check Data on ThingsBoard
+
+Once the device is connected, on the **Devices** page you can check the **Latest telemetry**.
+
+![ThingsBoard Devices Page with Latest Telemetry Tab](images/TB_rn320bth/TB_Lora_12.png)
+
+We can set up a dashboard by selecting the **Dashboard** option on the menu.
+
+![ThingsBoard Dashboards List](images/TB_rn320bth/TB_Lora_13.png)
+
+
