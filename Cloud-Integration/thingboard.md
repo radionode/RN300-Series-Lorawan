@@ -29,10 +29,10 @@ To continue with this guide, you will need the following:
 The first step is to register in the **The Things Stack** cloud console. Next, create an application in The Things Stack console.
 
 1.  Go to the console and open the **Applications** section.
-    ![The Things Stack Community Edition Sign-in Screen](RN300-Series-Lorawan/Cloud-Integration/images/TB_RN320bth/TB_Lora_1.png)
+    ![The Things Stack Community Edition Sign-in Screen](RN300-Series-Lorawan/Cloud-Integration/images/TB_rn320bth/TB_Lora_1.png)
 2.  Press the **Add application** tab and then fill in the **Application ID** and **Application Name**.
 3.  Click **Create application**.
-    ![The Things Stack Create Application Page](RN300-Series-Lorawan/Cloud-Integration/images/TB_RN320bth/TB_Lora_2.png)
+    ![The Things Stack Create Application Page](RN300-Series-Lorawan/Cloud-Integration/images/TB_rn320bth/TB_Lora_2.png)
 
 ### Payload Decoder
 
@@ -42,7 +42,7 @@ In this documentation, we explain how to add the payload formatters in the TTN p
 
 1.  In the application tab, click on **Payload formatters** and select the **Uplink** option.
 2.  Copy and paste the payload formatter code below into the editor.
-    ![The Things Stack Payload Formatters Uplink Menu](RN300-Series-Lorawan/Cloud-Integration/images/TB_RN320bth/TB_Lora_3.png)
+    ![The Things Stack Payload Formatters Uplink Menu](RN300-Series-Lorawan/Cloud-Integration/images/TB_rn320bth/TB_Lora_3.png)
 
 ```javascript
 function decodeUplink(input) {
