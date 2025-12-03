@@ -267,3 +267,18 @@ We can set up a dashboard by selecting the **Dashboard** option on the menu.
 ![ThingsBoard Dashboards List](images/TB_rn320bth/TB_Lora_13.png)
 
 
+Enter a name for the Dashboard and then click the **Add** button.
+
+![ThingsBoard Add Dashboard Dialog]images/TB_rn320bth/TB_Lora_14.png)
+
+After creating the Dashboard, we can set it up by adding the widget of our choice.
+
+![ThingsBoard Add New Widget Button](images/TB_rn320bth/TB_Lora_15.png)
+
+There are many options to choose. Once you decide on a widget, we can just click on that option. Here, for example, we are choosing the **Charts** option.
+
+![ThingsBoard Select Widgets Bundle Screen](images/TB_rn320bth/TB_Lora_16.png)
+
+A sample of the dashboard created is shown in the picture below.
+
+![ThingsBoard Sample Dashboard Displaying Time series chart, Temperature and Humidity](images/TB_rn320bth/TB_Lora_17.png)
