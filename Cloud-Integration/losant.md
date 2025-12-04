@@ -232,5 +232,52 @@ Exactly drag and drop the blocks as shown in the figure to create the workflow a
 
   ![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_16.png)  
 
+###  Configuring Device Details
 
+On the device details page:
+
+*   **Device ID:** Paste the ID you copied from the workflow template into the **Device ID** field.
+*   **Name & Description:** Add a name and description of your choice, as shown in the figure below.
+
+    ![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_17.png)
+
+    ###  Selecting Device Keys
+
+On the device page:
+
+1.  Set the **Device Class** to `Standalone`.
+2.  Choose the **Key values** from your sensor.
+3.  Select the following as Keys and their respective values:
+    *   `temperature`
+    *   `humidity`
+    *   `timestamp`
+
+   ![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_18.png)
+
+   ###  Adding Device Attributes
+
+1.  Navigate to the **Attributes** tab on the device page.
+2.  Click the **Add** button.
+3.  Add all the necessary attributes you require from the sensor.
+
+> **Note:** Once communication is enabled, you can view the device log on the right side of the page.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_19.png)
+
+
+For visualizing the Dashboard, you can go to the Dashboard page and Add a Dashboard.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_20.png)
+
+Give the Dashboard a name and create the dashboard.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_21.png)
+
+Add your desired blocks and create the Dashboard based on your needs.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_22.png)
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_23.png)
+
+    
 
