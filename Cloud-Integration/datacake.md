@@ -163,6 +163,27 @@ function Decoder (bytes, port) {
 ![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_4.png)
 
 
+##  Registering the End Device
+
+To register the end device, follow the steps below and enter the necessary details (as you would see them in the accompanying image):
+
+1.  **Input Method:** Select the end device in the **LoRaWAN Device repository**.
+    > **Note:** Radionode devices are already registered in The Things Stack platform for easy selection.
+2.  **End Device Brand:** Choose the option `Dekist Co.Ltd`.
+3.  **Model:** You can choose among the available **Radionode LoRaWAN models**.
+4.  **Cluster Selection:** Choose the cluster where the device can be added.
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_5.png)
+
+
+##  Finalizing Device Registration
+
+1.  Next, you need to enter the **DevEUI** correctly in the slot provided. You can find the **DevEUI** printed on the sticker located on the side of the physical device.
+2.  After entering the **DevEUI**, add a unique **End Device ID** in the given slot.
+3.  Once both are entered, complete the end device registration.
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_6.png)
+
 
 
 
