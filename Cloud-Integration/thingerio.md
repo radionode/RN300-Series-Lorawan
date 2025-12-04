@@ -255,7 +255,7 @@ Navigate to the following section: **Integrations** $\rightarrow$ **Webhooks**, 
 
 The next step is to create a product template in the platform for our **RN320-BTH** device.
 
- ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_12.png)
+ ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_13.png)
 
  Do the settings in the product template similar to the Images shown below:
 
@@ -265,9 +265,9 @@ The next step is to create a product template in the platform for our **RN320-BT
 *   **Auto Provision**
 *   **Product Script**
 
-   ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_13.png)
+   ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_14.png)
 
-![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_14.png)
+![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_15.png)
 
 
     Add this javascript code in the product template
@@ -297,10 +297,10 @@ function decodeHearbeatUplink(payload) {
 
 Once the communication is enabled, the device will be created as we have enabled **auto-provisioning**.
 
- ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_15.png)
+ ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_16.png)
 
 In the device settings, you can create a dashboard using the **widgets** options.
 
 > Here is a sample of the dashboard created in the thinger platform.
 
-![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_16.png)
+![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_17.png)
