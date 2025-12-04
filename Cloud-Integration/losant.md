@@ -181,5 +181,6 @@ After logging in to the **Losant platform**:
 
 ![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_8.png)
 
+Next give a name to the Webhook and Create the webhook as shown in the figure below.
 
-  
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_9.png)  
