@@ -142,3 +142,57 @@ function Decoder (bytes, port) {
   return { error: "Unsupported head frame: " + head };
 }
 ```
+
+##  End Device Registration in The Things Stack (TTS)
+
+The next crucial step is **End Device creation** within The Things Stack (TTS).
+
+1.  Open the **Devices** page in your TTS console.
+2.  Press the **Register device** tab.
+
+  ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_4.png)
+
+##  Enter End Device Details
+
+To successfully register the End Device, enter the following details, as illustrated in the image below:
+
+*   **Input Method**: Select **The end device in the LoRaWAN Device repository**.
+    > (Radionode devices are typically pre-registered in The Things Stack platform.)
+*   **End Device Brand**: Choose **Dekist Co.Ltd**.
+*   **Model**: Select the appropriate **Radionode LoRaWAN model** from the list.
+*   **Cluster**: Choose the **cluster** where this device should be added.
+
+ ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_5.png)
+
+##  Enter Device Identifiers
+
+Next, we need to correctly enter the **DevEUI** in the designated field.
+
+*   You can typically find the **DevEUI** printed on the sticker located on the side of the physical device.
+
+After entering the **DevEUI**, proceed as follows:
+
+1.  Add a unique **End Device ID** in the slot provided.
+2.  Complete the end device registration process.
+
+  ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_6.png)
+
+  ##  Thinger.io Setup
+
+### 1. Account Registration
+
+First, **register an account** on the **thinger.io platform**.
+
+---
+
+### 2. Create the The Things Stack Plugin
+
+The first step within Thinger.io is to create a **plugin** for The Things Stack platform:
+
+1.  Navigate to the **Plugins** tab.
+2.  Click the plugin option (as shown in the accompanying picture).
+
+  ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_7.png)
+  
+
+  
