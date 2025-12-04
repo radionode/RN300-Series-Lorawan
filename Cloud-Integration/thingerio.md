@@ -243,11 +243,11 @@ Navigate to the following section: **Integrations** $\rightarrow$ **Webhooks**, 
 > 💡 **Where to find the Token:**
 > You can find your **TTN API TOKEN** in the plugin settings page, under the dedicated `TTN API TOKEN` field.
 
- ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_10.png)
+ ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_11.png)
 
  Just click the **"copy"** button and paste it into the **Authorization Header** field in the TTN Console.
 
-  ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_11.png)
+  ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_10.png)
 
 ##  Product Template in Thinger.io
 
