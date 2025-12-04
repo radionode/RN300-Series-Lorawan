@@ -36,3 +36,7 @@ To continue with this guide we will need the following:
 ### Register Application
 
 The first step is to register in the Things stack cloud console. Next create an application in TheThingsStack console. Go to the console, open Applications section, press the add application tab and then fill the application ID, application name and then create the application.
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_1.png)
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_2.png)
