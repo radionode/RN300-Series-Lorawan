@@ -156,4 +156,12 @@ To register the **End Device**, enter these details:
    ![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_4.png)
 
  ![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_5.png)
+
+ ### ⚙️ Finalizing End Device Registration
+
+1.  Next, you need to enter the **DevEUI** correctly in the slot provided. You can find the **DevEUI** on the sticker on the side of the device.
+2.  After this, add an **End Device ID** in the given slot.
+3.  Click the button to **complete the end device registration**.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_6.png)
   
