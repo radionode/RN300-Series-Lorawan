@@ -157,11 +157,29 @@ To register the **End Device**, enter these details:
 
  ![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_5.png)
 
- ### ⚙️ Finalizing End Device Registration
+ ###  Finalizing End Device Registration
 
 1.  Next, you need to enter the **DevEUI** correctly in the slot provided. You can find the **DevEUI** on the sticker on the side of the device.
 2.  After this, add an **End Device ID** in the given slot.
 3.  Click the button to **complete the end device registration**.
 
 ![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_6.png)
+
+###  Losant Setup
+
+After logging in to the **Losant platform**:
+
+1.  Click the **Webhook** tab.
+2.  Click the **Add Webhook** button.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_7.png)
+
+###  Webhook Configuration
+
+1.  Next, choose the type of **webhook** you want to create to enable communication from **TTN** (The Things Network).
+2.  You should choose the **HTTP** option.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_8.png)
+
+
   
