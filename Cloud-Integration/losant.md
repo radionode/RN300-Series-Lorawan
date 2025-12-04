@@ -144,7 +144,7 @@ function Decoder (bytes, port) {
   return { error: "Unsupported head frame: " + head };
 }
 ```
-### 📶 End Device Registration Details
+###  End Device Registration Details
 
 To register the **End Device**, enter these details:
 
@@ -152,3 +152,5 @@ To register the **End Device**, enter these details:
 *   **End Device Brand:** Choose this option (**Dekist Co.Ltd**).
 *   **Model:** You can choose among the **Radionode LoRaWAN models**.
 *   **Cluster:** Choose the cluster where the device can be added.
+   ![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_4.png)
+  
