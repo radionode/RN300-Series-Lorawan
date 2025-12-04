@@ -183,4 +183,54 @@ After logging in to the **Losant platform**:
 
 Next give a name to the Webhook and Create the webhook as shown in the figure below.
 
-![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_9.png)  
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_9.png) 
+
+###  Copy Webhook URL
+
+After creating the webhook:
+
+1.  **Copy the URL** (as shown in the image below).
+2.  You'll need to use this copied URL when creating the Webhook in the **TTN (The Things Network) platform**.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_10.png)
+
+##  TTN Webhook Configuration
+
+1.  **Log in** to the **TTN Console** and select the target **Application**.
+2.  Navigate to **Integrations** → **Webhooks**.
+3.  Click **Add Webhooks** (as shown in the figure below).
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_11.png)
+
+###  Creating the Webhook
+
+1.  Add a **Name** for the Webhook ID.
+2.  Paste the **copied URL** (from the Losant platform) into the webhook template in the TTN platform.
+3.  Click **Create Webhook** to enable the integration.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_12.png)
+
+##  Creating a Workflow in the Losant Platform
+
+The next step is to create a workflow in the Losant platform to process the incoming data.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_13.png)
+
+In the workflow name, give a unique name for your workflow and Click create workflow button.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_14.png)
+
+Exactly drag and drop the blocks as shown in the figure to create the workflow and then copy the workflow ID as shown in the figure.
+
+![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_15.png)
+
+###  Adding a Device
+
+1.  Navigate to the **Devices** tab.
+2.  Click the **Add device** button.
+3.  You will see a screen similar to the one below. Select the **Standalone** option.
+
+  ![The Things Stack Payload Formatters Uplink Menu](images/losant/lo_Lora_16.png)  
+
+
+
