@@ -144,3 +144,11 @@ function Decoder (bytes, port) {
   return { error: "Unsupported head frame: " + head };
 }
 ```
+### 📶 End Device Registration Details
+
+To register the **End Device**, enter these details:
+
+*   **Input Method:** Select the end device in the **LoRaWAN Device repository** (Radionode devices are already registered in the Thing Stack platform).
+*   **End Device Brand:** Choose this option (**Dekist Co.Ltd**).
+*   **Model:** You can choose among the **Radionode LoRaWAN models**.
+*   **Cluster:** Choose the cluster where the device can be added.
