@@ -365,7 +365,7 @@ Now, within The Things Stack (TTN) platform, follow these steps to create the we
 2.  Click the **Add webhook** option.
 3.  Choose the **Data Cake** option from the list of integrations.
 
-![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_15.png
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_15.png)
 
 ### Configuring the Data Cake Webhook
 
@@ -375,7 +375,7 @@ To complete the webhook creation, perform the following actions:
 2.  **Paste the token** you previously copied from the Data Cake platform into the designated field.
 3.  Click **Create Webhook** (or the corresponding button) to finalize the setup.
 
-![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_16.png
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_16.png)
 
 ---
 ##  Enabling Dashboard Monitoring in Data Cake
@@ -390,7 +390,7 @@ However, we need to perform one final configuration step within Data Cake to ena
 4.  In this section, you will see all the raw data fields being received from your sensor.
 5.  **Choose the specific fields** you would like to store and ultimately visualize on your dashboard.
 
-   ![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_17.png
+   ![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_17.png  ) 
 
 ---
 
@@ -402,4 +402,4 @@ Once you have **set and configured the desired fields** (as per the previous ste
 1.  Click the **Dashboard** tab within the Device options.
 2.  You can now **visualize the incoming data** from your sensor on the dashboard.
 
-   ![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_18.png
+   ![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_18.png )
