@@ -267,12 +267,11 @@ The next step is to create a product template in the platform for our **RN320-BT
 
    ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_13.png)
 
-    ![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_14.png)
+![The Things Stack Payload Formatters Uplink Menu](images/thingerio/Thinger_Lora_14.png)
 
 
     Add this javascript code in the product template
-
-    ```javascript
+```javascript
 function getId(payload) {
     return payload.deviceId;
 }
