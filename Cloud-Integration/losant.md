@@ -17,7 +17,7 @@ To continue with this guide, you will need the following:
 * **LoRaWAN® gateway** (e.g., Radionode LoRaWAN Gateway)
 * Configured integration on a networks server and ThingsBoard
 * **Network Server account** (The Things Stack)
-* **Losant account** (PE account)
+* **Losant account** 
 
 ---
 
