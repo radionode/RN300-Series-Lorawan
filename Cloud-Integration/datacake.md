@@ -184,10 +184,222 @@ To register the end device, follow the steps below and enter the necessary detai
 
 ![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_6.png)
 
+##  DataCake Setup
+
+After logging in to the **DataCake** platform, follow these steps:
+
+1.  Click the **All devices** Tab.
+2.  Press the **Add Device** button.
+3.  You will see many options to connect to different networks.
+4.  Here we will choose the **LoRaWAN** network.
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_7.png)
+
+###  Creating a New Device
+
+1.  After choosing the **LoRaWAN** option, click the option **“New product”**.
+2.  Give a descriptive name to your device.
+3.  Click **Create** (or similar button) to finish creating the new device.
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_8.png)
+
+###  Choosing the LoRaWAN Network Server (LNS)
+
+1.  Next, you need to choose the option for the **LoRaWAN Network Server (LNS)**.
+2.  Here, we will be choosing the **“The Things Stack”** option.
+3.  Press the **Next** button to continue.
 
 
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_9.png)
+
+###  Device Configuration Details
+
+Next, you will be prompted to input the following required details:
+
+*   **DeviceEUI**
+*   **Name**
+*   **Location** (optional, if needed)
+*   **Tag** (optional, if needed)
+
+Input these values into the fields prompted, as shown in the picture below:
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_10.png)
 
 
+###  Adding the Device to Datacake
+
+After choosing the plan required for your application, you can now **add the device to the Datacake platform**.
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_11.png)
 
 
+###  Post-Creation Configuration
 
+After the device is successfully created, follow these steps to access its configuration:
+
+1.  Click the **"All Devices"** option.
+2.  Click the **"Configuration"** tab.
+3.  Navigate to **Product** and then **Hardware**.
+
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_12.png)
+
+###  Locating the Payload Decoder
+
+In the **Configuration** tab, after selecting the **Product and Hardware** option, you will find a **Payload Decoder** option, as shown in the image below.
+
+Copy and paste the code given below into the code block:
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_13.png)
+
+---
+
+```javascript
+
+function Decoder(payload, port) {
+  function base64ToBytes(b64) {
+    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    var bytes = [], buffer = 0, bits = 0, i, val, c;
+    for (i = 0; i < b64.length; i++) {
+      c = b64.charAt(i);
+      if (c === "=") break;
+      val = chars.indexOf(c);
+      if (val === -1) continue;
+      buffer = (buffer << 6) | val;
+      bits += 6;
+      if (bits >= 8) {
+        bits -= 8;
+        bytes.push((buffer >> bits) & 0xFF);
+      }
+    }
+    return bytes;
+  }
+
+  function bytesToUint32LE(b, p) {
+    return (b[p] | (b[p + 1] << 8) | (b[p + 2] << 16) | (b[p + 3] << 24)) >>> 0;
+  }
+
+  function bytesToFloat32LE(b, p) {
+    var bits = (b[p]) | (b[p + 1] << 8) | (b[p + 2] << 16) | (b[p + 3] << 24);
+    var sign = (bits >>> 31) ? -1 : 1;
+    var exp = (bits >>> 23) & 0xFF;
+    var mant = bits & 0x7FFFFF;
+    if (exp === 255) return mant ? NaN : sign * Infinity;
+    if (exp === 0) return sign * Math.pow(2, -126) * (mant / Math.pow(2, 23));
+    return sign * Math.pow(2, exp - 127) * (1 + mant / Math.pow(2, 23));
+  }
+
+  function rotateLeft(arr, start) {
+    return arr.slice(start).concat(arr.slice(0, start));
+  }
+
+  var bytes = null;
+
+  if (payload && payload.uplink_message) {
+    if (payload.uplink_message.frm_payload)
+      bytes = base64ToBytes(payload.uplink_message.frm_payload);
+  } else if (payload && payload.b64payload) {
+    bytes = base64ToBytes(payload.b64payload);
+  } else if (payload instanceof Array) {
+    bytes = payload.slice(0);
+  } else if (typeof payload === "string") {
+    bytes = base64ToBytes(payload);
+  }
+
+  if (!bytes) return [{ field: "ERROR", value: "No payload bytes found" }];
+
+  // Find correct header (0x0C, 0x1E)
+  var expectedHead = 0x0C, expectedModel = 0x1E, i, foundIndex = -1;
+  for (i = 0; i < bytes.length - 1; i++) {
+    if (bytes[i] === expectedHead && bytes[i + 1] === expectedModel) {
+      foundIndex = i;
+      break;
+    }
+  }
+  if (foundIndex > 0) bytes = rotateLeft(bytes, foundIndex);
+
+  var head = bytes[0] || 0;
+  var model = bytes[1] || 0;
+  var tsmode = bytes[2] || 0;
+  var timestamp = bytesToUint32LE(bytes, 3);
+  var splfmt = bytes[7] || 0;
+  var data_size = bytes.length - 8;
+
+  var temperature = null, humidity = null;
+  if (splfmt === 2 && bytes.length >= 16) {
+    temperature = bytesToFloat32LE(bytes, 8);
+    humidity = bytesToFloat32LE(bytes, 12);
+  }
+
+  var result = [];
+  result.push({ field: "MY_FIELD", value: head });
+  result.push({ field: "MY_FIELD", value: model });
+  result.push({ field: "TSMODE", value: tsmode });
+  result.push({ field: "TIMESTAMP", value: timestamp });
+  result.push({ field: "SPLFMT", value: splfmt });
+  result.push({ field: "DATA_SIZE", value: data_size });
+  if (temperature !== null) result.push({ field: "TEMPERATURE", value: temperature.toFixed(2) });
+  if (humidity !== null) result.push({ field: "HUMIDITY", value: humidity.toFixed(2) });
+
+  return result;
+}
+```
+
+###  Retrieving the API Token
+
+After creating the device and setting up the payload decoder, the next step is to obtain the **API Token** necessary for creating the webhook in the TTN platform.
+
+1.  Navigate to the **Account Settings** tab.
+2.  Click on **API Token**.
+3.  Copy the token displayed here, as shown in the image below.
+
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_14.png)
+
+
+## Creating a Webhook in The Things Stack (TTN)
+
+Now, within The Things Stack (TTN) platform, follow these steps to create the webhook:
+
+1.  Click the **Webhooks** option.
+2.  Click the **Add webhook** option.
+3.  Choose the **Data Cake** option from the list of integrations.
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_15.png
+
+### Configuring the Data Cake Webhook
+
+To complete the webhook creation, perform the following actions:
+
+1.  **Add a Name** for the new webhook (e.g., `datacake-integration`).
+2.  **Paste the token** you previously copied from the Data Cake platform into the designated field.
+3.  Click **Create Webhook** (or the corresponding button) to finalize the setup.
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_16.png
+
+---
+##  Enabling Dashboard Monitoring in Data Cake
+
+Once the webhook is created and your device is actively connected to The Things Stack (TTN) gateway, communication begins, and **data is successfully sent to the Data Cake platform**.
+
+However, we need to perform one final configuration step within Data Cake to enable dashboard monitoring:
+
+1.  Navigate to the **Devices** tab in the Data Cake platform.
+2.  Click the **Configuration** tab.
+3.  Select the **Field** option.
+4.  In this section, you will see all the raw data fields being received from your sensor.
+5.  **Choose the specific fields** you would like to store and ultimately visualize on your dashboard.
+
+   ![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_17.png
+
+---
+
+
+###  Visualize Your Data
+
+Once you have **set and configured the desired fields** (as per the previous step), follow these instructions to view your data:
+
+1.  Click the **Dashboard** tab within the Device options.
+2.  You can now **visualize the incoming data** from your sensor on the dashboard.
+
+   ![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_18.png
