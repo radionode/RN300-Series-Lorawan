@@ -273,7 +273,6 @@ The next step is to create a product template in the platform for our **RN320-BT
     Add this javascript code in the product template
 
     ```javascript
-    // Device Identifier Resolver
 function getId(payload) {
     return payload.deviceId;
 }
@@ -282,12 +281,9 @@ function getId(payload) {
 function decode_data(payload) { 
     let decoded = payload.decodedPayload;
 
-    // Ignore the head 11 and 13
     if (decoded.head == '11' || decoded.head == '13') { 
         return null;
     }
-
-    // Save the rest of the heads in the bucket
     return decoded;
 }
 
