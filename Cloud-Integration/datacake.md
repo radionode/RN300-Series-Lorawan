@@ -40,3 +40,31 @@ The first step is to register in the Things stack cloud console. Next create an 
 ![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_1.png)
 
 ![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_2.png)
+
+##  Payload Decoder
+
+To ensure successful data transmission, both the device and the network server must be correctly configured.
+
+Our device submits data in **binary format**. We have two options to decode the device data:
+
+*   **TheThingsStack decoder:** Data will be decoded before entering the Thingsboard.
+*   **Thingsboard converters:** Uplink/downlink converters will be used to decode data from binary format into JSON.
+
+In this documentation, we will explain how you have to add the payload formatters in the **TTN platform (The Things Network/Stack)**.
+
+1.  In the Application tab, navigate to **Payload formatters**.
+2.  Click on the **Uplink** option.
+3.  Copy and paste the payload formatter we have given below into the provided field.
+
+
+![The Things Stack Community Edition Sign-in Screen](images/datacake/dc_Lora_3.png)
+
+
+
+
+
+
+
+
+
+
