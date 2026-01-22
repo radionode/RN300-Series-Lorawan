@@ -232,7 +232,82 @@ Next we have to create the onboarding assistant. In the screen shown below, just
 
 ![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_15.png)
 
+After this in the next page, add the model (here The things stack), then add the data stream name and the Keep alive interval as shown in the figure below.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_16.png)
+
+After this click the Associate Lorawan datastream option and click the name you gave in the previous step.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_17.png)
+
+Then you will see a screen like this.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_18.png)
 
 
 
+In the onboard lora data stream, if you click that you can find this screen as shown in the figure below. Copy the URL Param implementation from this page, we need to use this while creating the webhook in the Things stack platform.
+
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_19.png)
+
+## Creating webhook in the TTN Stack
+
+Now in the TTN platform click the webhook option then the ADD option followed by choosing the Zoho option.
+
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_20.png)
+
+Give a name for the webhook, and paste the URL Param implementation copied while creating the device in the Zoho platform.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_21.png)
+
+Once you create the webhook the device will be connected to things stack to receive data.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_22.png)
+
+
+Once you click on the device tab, you can see all the details of the device. If you click the messages tab you can see the live and historic messages.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_23.png)
+
+
+
+When you click the live messages, you can see a list of messages received by the device. Just click on one of the messages. You can see an image as shown below and the data variable name is needed for us to configure the parsing key while setting the datapoint configuration and to finally set up the dashboard. 
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_24.png)
+
+
+
+To access specific data from the sensor we need to create Datapoint configuration.Click the Actions tab and then Datapoint configuration. 
+
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_25.png)
+
+
+After entering the Datapoint configuration, do the settings as mentioned below. Click on the model template, and  add custom datapoint tabs and click proceed.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_26.png)
+
+Then add the datapoint name, after this we need to set up the parsing key here.
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_27.png)
+
+
+Once you click the parsing key, just click direct parsing string and press the next button
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_28.png)
+
+
+
+After clicking the next button, you need to add the parsing key, taken from the earlier steps. For example here the parsing key is the decoded_data. Here we are creating the datapoint for humidity. So the parsing key should be decoded_data.humidity. Then finish the registration.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_29.png)
+
+
+Finally you can see the data in the data explorer, after choosing the data points to view and choosing the chart type to see.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_30.png)
+
+In the dashboard option, choose dashboard and give a name and choose the data points to display and the type of chart you need.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_31.png)
 
