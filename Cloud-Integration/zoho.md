@@ -194,4 +194,6 @@ Click on the **Create Application** tab to proceed.
 
 ![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_7.png)
 
+After clicking the **Application** tab fill in the name of your application and click the create application button.
 
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_8.png)
