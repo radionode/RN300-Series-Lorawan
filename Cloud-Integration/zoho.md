@@ -197,3 +197,13 @@ Click on the **Create Application** tab to proceed.
 After clicking the **Application** tab fill in the name of your application and click the create application button.
 
 ![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_8.png)
+
+
+Once the application is created you can see a screen like it is shown below in the picture. Now click on the tab to create a new device.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_9.png)
+
+After clicking add the device creation tab you can see different options to create a device.
+Click the option add by defining your device product.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_10.png)
