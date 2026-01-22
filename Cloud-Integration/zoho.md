@@ -185,3 +185,13 @@ To register the end device, follow the steps below and enter the necessary detai
 
 ![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_6.png)
 
+## Zoho Setup
+
+After creating an account on the **Zoho IoT Platform**, log in to the Zoho dashboard.
+
+The first step is to create an **Application**, as shown in the image below.  
+Click on the **Create Application** tab to proceed.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_7.png)
+
+
