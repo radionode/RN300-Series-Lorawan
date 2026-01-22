@@ -207,3 +207,32 @@ After clicking add the device creation tab you can see different options to crea
 Click the option add by defining your device product.
 
 ![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_10.png)
+
+
+Add the required details as shown in the figure below. Provide a device name and other details as shown below.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_11.png)
+
+
+Next you need to add the details like modelname, name of the device and the devUI from your LoRA device. In other fields you can retain the same details as shown in the figure.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_12.png)
+
+
+After creating the device you will be seeing a screen as seen in the picture below.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_13.png)
+
+
+After this you will be prompted to add if you have an IoT device or not. You can just click if you have got an IoT device.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_14.png)
+
+Next we have to create the onboarding assistant. In the screen shown below, just click the option Add datastream.
+
+![The Things Stack Community Edition Sign-in Screen](images/zoho/zoho_15.png)
+
+
+
+
+
