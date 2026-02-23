@@ -30,8 +30,10 @@ The first step is to register in the **The Things Stack** cloud console. Next, c
 
 1.  Go to the console and open the **Applications** section.
     ![The Things Stack Community Edition Sign-in Screen](images/tagorn320/tago_1.png)
+    
 2.  Press the **Add application** tab and then fill in the **Application ID** and **Application Name**.
 3.  Click **Create application**.
+4.  
     ![The Things Stack Create Application Page](images/tagorn320/tago_2.png)
 
 ### Payload Decoder
@@ -42,7 +44,9 @@ In this documentation, we explain how to add the payload formatters in the TTN p
 
 1.  In the application tab, click on **Payload formatters** and select the **Uplink** option.
 2.  Copy and paste the payload formatter code below into the editor.
+  
     ![The Things Stack Payload Formatters Uplink Menu](images/tagorn320/tago_3.png)
+    
 
 ```javascript
 function decodeUplink(input) {
