@@ -29,11 +29,13 @@ To continue with this guide, you will need the following:
 The first step is to register in the **The Things Stack** cloud console. Next, create an application in The Things Stack console.
 
 1.  Go to the console and open the **Applications** section.
+   
     ![The Things Stack Community Edition Sign-in Screen](images/tagorn320/tago_1.png)
+
     
 2.  Press the **Add application** tab and then fill in the **Application ID** and **Application Name**.
 3.  Click **Create application**.
-4.  
+
     ![The Things Stack Create Application Page](images/tagorn320/tago_2.png)
 
 ### Payload Decoder
@@ -171,4 +173,49 @@ After this, add an **End Device ID** in the slot given and complete the end devi
 
 ![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_6.png)
 
-ghjkfui
+
+## Create device on Tago
+
+After creating an account in the tago.io platform, the  next step is to create a device. In the screenshot below you can see a devices tab, once you click that there is a tab to add a device.  
+
+![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_7.png)
+
+
+After clicking the Add device button you will be prompted to a screen where you can add the company name Radionode in the search connectors tab. Since Radionode devices have device provisioning earlier, you can just install the device in one click. All the payload decoders are already stored in the device template, making it easy to install.
+
+![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_8.png)
+
+After choosing the Rn320BTH option you will be prompted to a screen as shown below. Just choose the LoRaWAN TTN option here.
+
+
+![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_9.png)
+
+After choosing the TTN option, you can just give a name to the device, choose the data retention period, and add the Device EUI number given on the side of the device. And click create my device.
+
+![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_10.png)
+
+ ## Check data on Tago.io 
+
+ To access data, just go to the devices page and click on the device name and the Data button. We can access the real-time data. 
+
+![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_11.png)
+
+Dashboards can be created to visualize the data easily. In the main page you can find a dashboard tab with a “+” sign.
+
+![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_12.png)
+
+After that we can give a name to the dashboard and it is possible to choose from the template or create a dashboard with choosing our own widgets.
+
+
+![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_13.png)
+
+
+You can choose the widget and then set the widget name and then choose the device from where the data needs to be shown in real-time and the parameter to be shown.
+
+![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_14.png)
+
+After the dashboard setting, we can visualize the data in real-time and can download the data in csv or xlsx format also.
+
+![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_15.png)
+
+
