@@ -170,3 +170,5 @@ Next, we need to enter the **DevEUI** correctly in the slot provided there. You 
 After this, add an **End Device ID** in the slot given and complete the end device registration by clicking **Register end device**.
 
 ![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_6.png)
+
+ghjkfui
