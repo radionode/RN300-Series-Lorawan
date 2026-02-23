@@ -149,3 +149,24 @@ function Decoder (bytes, port) {
   return { error: "Unsupported head frame: " + head };
 }
 ```
+
+## End Device Registration in The Things Stack
+
+Next step is an **End Device creation** in the TTS. Open the **Devices** page and click the **Register device** tab.
+
+![The Things Stack End Devices Page with Register Device Button](images/tagorn320/tago_4.png)
+
+To register the End Device, enter the following details:
+
+* **Input Method**: Select the end device in the LoRaWAN Device repository (Radionode devices are already registered in the Thing Stack platform).
+* **End Device Brand**: Choose the option **Dekist Co.Ltd**.
+* **Model**: Choose among the Radionode LoRaWAN models.
+* Choose the appropriate **cluster** where the device can be added.
+
+![The Things Stack Register End Device Configuration (Top Section)](images/tagorn320/tago_5.png)
+
+Next, we need to enter the **DevEUI** correctly in the slot provided there. You can find the **DevEUI** on the sticker on the side of the device.
+
+After this, add an **End Device ID** in the slot given and complete the end device registration by clicking **Register end device**.
+
+![The Things Stack Register End Device Configuration (Bottom Section)](images/tagorn320/tago_6.png)
