@@ -1,13 +1,23 @@
-# RN-320 BTH LoRaWAN Sensor Integration Guide with Losant
+# How to connect the Radionode RN320 LoRaWAN sensor series with Losant IoT Platform
 ## Introduction
 
-This guide explains how to connect the **RN-320 BTH LoRaWAN Temperature and Humidity sensor** to the **Losant** platform.
+This guide explains how to connect the **RN320 LoRaWAN sensor series** to the **Losant** platform.
 
-The **Radionode RN320 series** is a robust, battery-operated wireless environmental sensor, professionally engineered for durability and extreme longevity, boasting an unbelievable **10-year battery life** (RN320-BTH model with 17,000mAh) facilitated by LoRaWAN technology for easy, wide-range network setup.
-
-This specific RN320-BTH model excels with an **embedded high-accuracy temperature and humidity sensor**, critical data protection via a retransmission function that prevents sample drops, and permanent local storage on a **microSD card**. User interaction is enhanced by an **E-paper display**, **loud buzzer (97dBA)**, and a **3-Color LED indicator** (Best, Moderate, Bad), while quick access to comprehensive remote monitoring is ensured by simple QR code registration to the Radionode365 service. It also offers easy installation with a magnet and wall bracket.
+The Radionode RN320 series is a robust, battery-operated wireless environmental sensor, professionally engineered for durability and extreme longevity, boasting an unbelievable 10-year battery life (RN320-BTH model with 17,000mAh) facilitated by LoRaWAN technology for easy, wide-range network setup. The RN320 model excels with an embedded high-accuracy sensor, critical data protection via a retransmission function that prevents sample drops, and permanent local storage on a microSD card. User interaction is enhanced by an E-paper display, loud buzzer, and LED indicator, while quick access to comprehensive remote monitoring is ensured by simple QR code registration to the Radionode365 service.
 
 ---
+
+### General Features of RN320 Device
+
+*   Long Range Wireless / LoraWAN ®
+*   E-Paper Display
+*   Loud Buzzer 97dBA
+*   3 Color LED Indicator (Best, Moderate, Bad)
+*   Long Battery Life (17000mAh)
+*   MicroSD Card supported
+*   Easy Installation with Magnet and Wall Bracket
+
+In this integration scenario we use the RN320-BTH series for the demo.
 
 ## Prerequisites
 
