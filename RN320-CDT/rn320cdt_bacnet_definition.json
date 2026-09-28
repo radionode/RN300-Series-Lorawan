@@ -1,0 +1,12 @@
+{
+  "description": "Radionode LoRaWAN CO2, Lux, Temperature, and Humidity Sensor",
+  "properties": {
+    "co2":         { "type": "float", "units": "partsPerMillion", "description": "Carbon Dioxide concentration" },
+    "lux":         { "type": "float", "units": "lux", "description": "Illuminance level" },
+    "temperature": { "type": "float", "units": "degreesCelsius" },
+    "humidity":    { "type": "float", "units": "percentRelativeHumidity" },
+    "volt":        { "type": "float", "units": "volts" },
+    "bat":         { "type": "uint8",  "units": "percent" }
+  },
+  "decoder": "rn320cdt.js"
+}
