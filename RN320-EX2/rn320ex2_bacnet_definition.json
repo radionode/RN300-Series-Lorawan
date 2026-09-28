@@ -1,0 +1,11 @@
+{
+  "description": "Radionode LoRaWAN Dual Temperature and Door Open/Close Sensor",
+  "properties": {
+    "temperature1": { "type": "float", "units": "degreesCelsius", "description": "Temperature channel 1 reading" },
+    "temperature2": { "type": "float", "units": "degreesCelsius", "description": "Temperature channel 2 reading" },
+    "door":         { "type": "float", "description": "Door status (99: open, 0: closed)" },
+    "volt":         { "type": "float", "units": "volts" },
+    "bat":          { "type": "uint8",  "units": "percent" }
+  },
+  "decoder": "rn320ex.js"
+}
