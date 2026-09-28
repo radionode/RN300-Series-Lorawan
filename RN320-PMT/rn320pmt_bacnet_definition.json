@@ -1,0 +1,16 @@
+{
+  "description": "Radionode LoRaWAN Air Quality, Particulate Matter (PM2.5, PM10), Gas (HCHO, CO2, CO), Light, Temperature, and Humidity Sensor",
+  "properties": {
+    "pm25":        { "type": "float", "units": "microgramsPerCubicMeter", "description": "PM2.5 particulate matter concentration" },
+    "pm10":        { "type": "float", "units": "microgramsPerCubicMeter", "description": "PM10 particulate matter concentration" },
+    "lux":         { "type": "float", "units": "lux", "description": "Illuminance level" },
+    "hcho":        { "type": "float", "units": "partsPerMillion", "description": "Formaldehyde concentration" },
+    "co2":         { "type": "float", "units": "partsPerMillion", "description": "Carbon Dioxide concentration" },
+    "co":          { "type": "float", "units": "partsPerMillion", "description": "Carbon Monoxide concentration" },
+    "temperature": { "type": "float", "units": "degreesCelsius" },
+    "humidity":    { "type": "float", "units": "percentRelativeHumidity" },
+    "volt":        { "type": "float", "units": "volts" },
+    "bat":         { "type": "uint8",  "units": "percent" }
+  },
+  "decoder": "rn320pmt.js"
+}
