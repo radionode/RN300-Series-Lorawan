@@ -6,5 +6,5 @@
     "volt":        { "type": "float", "units": "volts" },
     "bat":         { "type": "uint8",  "units": "percent" }
   },
-  "decoder": "radionode_decoder.js"
+  "decoder": "rn320bth.js"
 }
